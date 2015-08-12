@@ -20,6 +20,12 @@
 
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider) %><br />
+    <%- if devise_mapping.omniauthable? %>
+      <%= menu_item '<i class="fa fa-linkedin"></i>'.html_safe, omniauth_authorize_path(resource_name, :linkedin), class: "btn btn-block btn-social btn-linkedin" %>
+      <%= menu_item '<i class="fa fa-github"></i>'.html_safe, omniauth_authorize_path(resource_name, :github), class: "btn btn-block btn-social btn-github" %>
+      <%= menu_item '<i class="fa fa-facebook"></i>'.html_safe, omniauth_authorize_path(resource_name, :facebook), class: "btn btn-block btn-social btn-facebook" %>
+      <%= menu_item '<i class="fa fa-google"></i>'.html_safe, omniauth_authorize_path(resource_name, :google_oauth2), class: "btn btn-block btn-social btn-google" %>
+      <%= menu_item '<i class="fa fa-twitter"></i>'.html_safe, omniauth_authorize_path(resource_name, :twitter), class: "btn btn-block btn-social btn-twitter" %>
+    <% end -%>
   <% end -%>
 <% end -%>

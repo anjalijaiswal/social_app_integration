@@ -35,7 +35,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem "therubyracer"
 gem "less-rails" 
 gem "twitter-bootstrap-rails"
-
+gem 'activerecord-session_store'
+gem 'social-share-button'
 group :development, :test do
 
   gem 'devise'
@@ -43,6 +44,8 @@ group :development, :test do
   gem 'omniauth-twitter'
   gem 'omniauth-facebook'
   gem 'omniauth-linkedin'
+  gem "omniauth-google-oauth2"
+  gem "omniauth-github"
 
   gem 'awesome_print'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -52,6 +55,6 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  gem 'spring', '1.3.5'
 end
 

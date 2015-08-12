@@ -239,9 +239,11 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-   config.omniauth :linkedin, Rails.application.secrets.linkedin_app_id, Rails.application.secrets.linkedin_app_secret, :scope => 'r_basicprofile r_emailaddress', :fields => ["email-address", "first-name", "last-name","id"]
-  
-  
+  config.omniauth :linkedin, Rails.application.secrets.linkedin_app_id, Rails.application.secrets.linkedin_app_secret, :scope => 'r_basicprofile r_emailaddress', :fields => ["email-address", "first-name", "last-name","id"]
+  config.omniauth :facebook, Rails.application.secrets.facebook_app_id, Rails.application.secrets.facebook_app_secret, :scope => 'public_profile email user_friends'
+  config.omniauth :google_oauth2, Rails.application.secrets.google_client_id, Rails.application.secrets.google_client_secret, :scope => 'profile email'
+  config.omniauth :twitter, Rails.application.secrets.twitter_client_id, Rails.application.secrets.twitter_client_secret, {x_auth_access_type: "read"}
+  config.omniauth :github, Rails.application.secrets.github_client_id, Rails.application.secrets.github_client_secret
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

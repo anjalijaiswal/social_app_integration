@@ -9,6 +9,7 @@
   <dt><strong><%= model_class.human_attribute_name(:body) %>:</strong></dt>
   <dd><%= @post.body %></dd>
 </dl>
+<%= social_share_button_tag(@post.title) %>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
               posts_path, :class => 'btn btn-default'  %>
