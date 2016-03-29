@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  host: localhost
+  port: 5432
+  pool: 5
+
+development:
+  <<: *default
+  database: social_app_dev
+  username: social_app
+  password: admin
+
+production:
+  <<: *default
+  database: social_app_dev
+  username: social_app
+  password: admin
+
+test:
+  <<: *default
+  database: social_app_test
+  username: social_app
+  password: admin
