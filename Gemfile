@@ -31,13 +31,26 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'therubyracer'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
+gem 'activerecord-session_store'
+gem 'social-share-button'
 group :development, :test do
+  gem 'devise'
+  gem 'omniauth'
+  gem 'omniauth-twitter'
+  gem 'omniauth-facebook'
+  gem 'omniauth-linkedin'
+  gem 'omniauth-google-oauth2'
+  gem 'omniauth-github'
+
+  gem 'awesome_print'
   gem 'byebug'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-
-  # Spring speeds up development by keeping your appl running in the background.
-  #  Read more: https://github.com/rails/spring
-  gem 'spring'
+  # Spring speeds up development by keeping your app running in the background.
+  # Read more: https://github.com/rails/spring
+  gem 'spring', '1.3.5'
 end
